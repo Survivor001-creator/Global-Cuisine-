@@ -322,7 +322,7 @@ button:hover {
     <p style="font-family: 'Dancing Script', cursive; font-size: 20px; color: #d35400;">African delicacies are rich, flavorful dishes deeply rooted in tradition-like spicy jollof rice, tender suya, and hearty fufu with soup. Each bite celebrates culture, community, and vibrant taste.</p>
     <div id="foodList" style="display:none;">
   <div class="food-item">
-    <img src="jollof.jpg" alt="Jollof Rice" style="width: 80px; height: 60px; border-radius: 8px; object-fit: cover; margin-right: 10px;" />
+    <img src="joller.jpg" alt="Jollof Rice" style="width: 80px; height: 60px; border-radius: 8px; object-fit: cover; margin-right: 10px;" />
     <span>Jollof Rice</span>
     <div class="controls">
       <button onclick="updateCart('Jollof Rice', -1)">−</button>
@@ -340,7 +340,7 @@ button:hover {
   </div>
 
   <div class="food-item">
-    <img src="moimoi.jpg" alt="Moi Moi" style="width: 80px; height: 60px; border-radius: 8px; object-fit: cover; margin-right: 10px;" />
+    <img src="moi moi.jpg" alt="Moi Moi" style="width: 80px; height: 60px; border-radius: 8px; object-fit: cover; margin-right: 10px;" />
     <span>Moi Moi</span>
     <div class="controls">
       <button onclick="updateCart('Moi Moi', -1)">−</button>
@@ -379,6 +379,38 @@ button:hover {
     <button>Pay</button>
   </section>
 
+    <section class="reviews">
+    <h3>Customer Reviews</h3>
+
+    <div class="review">
+      <div class="profile">
+        <img src="https://i.pravatar.cc/50?img=1" alt="User" />
+        <strong>Anna Smith</strong>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+      </div>
+      <p>The food was absolutely amazing, I felt like I was traveling the world in one meal!</p>
+      <div class="reaction">
+        <button onclick="like(this)">👍 Like (<span>1.9m</span>)</button>
+        <button onclick="comment(this)">💬 Comment</button>
+      </div>
+      <input type="text" placeholder="Write a comment..." style="display:none;" />
+    </div>
+
+    <div class="review">
+      <div class="profile">
+        <img src="https://i.pravatar.cc/50?img=5" alt="User" />
+        <strong>James Lee</strong>
+        <div class="stars">⭐⭐⭐⭐</div>
+      </div>
+      <p>Delicious and authentic. The Jollof rice and Pad Thai were my favorites.</p>
+      <div class="reaction">
+        <button onclick="like(this)">👍 Like (<span>1.6m</span>)</button>
+        <button onclick="comment(this)">💬 Comment</button>
+      </div>
+      <input type="text" placeholder="Write a comment..." style="display:none;" />
+    </div>
+
+    </section>
   <footer>
     <button onclick="window.location.href='mailto:recipient@gmail.com'">Email</button>
     <div>
@@ -388,6 +420,9 @@ button:hover {
       <a href="https://facebook.com/"><img src="https://img.icons8.com/color/48/facebook-new.png" alt="Facebook"></a>
       <a href="https://youtube.com/"><img src="https://img.icons8.com/color/48/youtube-play.png" alt="YouTube"></a>
     </div>
+       <p>Email:chrizydesmond@email.com</p>
+      <p>Phone: 09034950525</p>
+      <p>Location: International Standard 25 city </p>
     <p>&copy; 2025 Break Time Global Cuisine</p>
   </footer>
 
