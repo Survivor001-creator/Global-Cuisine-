@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Continental Food Explorer</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f0f0;
+      color: #333;
+    }
+
+    header {
+      background-color: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      font-size: 2em;
+      font-weight: bold;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .continent-card {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      margin: 15px;
+      width: 280px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .continent-card:hover {
+      transform: scale(1.03);
+    }
+
+    .continent-card h2 {
+      background-color: #d35400;
+      color: white;
+      margin: 0;
+      padding: 15px;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+      font-size: 1.5em;
+    }
+
+    .continent-content {
+      display: none;
+      padding: 15px;
+    }
+
+    .continent-content img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    .country {
+      font-weight: bold;
+      margin-top: 10px;
+      color: #2c3e50;
+    }
+
+    .description {
+      font-size: 0.95em;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #333;
+      color: white;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .continent-card {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>Explore Top Continental Dishes</header>
+
+<div class="container" id="continent-container">
+  <!-- JS will insert cards here -->
+</div><a href="index.html">Back to Home</a>
+
+
+<script>
+  const foodData = [
+    {
+      continent: 'Asia',
+      country: 'Japan',
+      food: 'Sushi',
+      img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Sushi_platter.jpg/640px-Sushi_platter.jpg',
+      description: 'A Japanese delicacy made of vinegared rice, raw seafood, and vegetables, often wrapped in seaweed.'
+    },
+    {
+      continent: 'Europe',
+      country: 'Italy',
+      food: 'Pizza',
+      img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Supreme_pizza.jpg/640px-Supreme_pizza.jpg',
+      description: 'Originating from Italy, pizza is a flatbread topped with tomato sauce, cheese, and various toppings.'
+    },
+    {
+      continent: 'North America',
+      country: 'USA',
+      food: 'Cheeseburger',
+      img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/RedDot_Burger.jpg/640px-RedDot_Burger.jpg',
+      description: 'A classic American fast food made with a grilled beef patty, cheese, lettuce, tomato, and buns.'
+    },
+    {
+      continent: 'South America',
+      country: 'Brazil',
+      food: 'Feijoada',
+      img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Feijoada.jpg/640px-Feijoada.jpg',
+      description: 'Brazilian black bean stew with pork, served with rice, orange slices, and farofa (toasted cassava flour).'
+    }
+  ];
+
+  const container = document.getElementById('continent-container');
+
+  foodData.forEach((item, index) => {
+    const card = document.createElement('div');
+    card.className = 'continent-card';
+
+    card.innerHTML = `
+      <h2>${item.continent}</h2>
+      <div class="continent-content" id="content-${index}">
+        <img src="${item.img}" alt="${item.food}">
+        <div class="country">${item.country} - ${item.food}</div>
+        <p class="description">${item.description}</p>
+      </div>
+    `;
+
+    card.addEventListener('click', () => {
+      const content = card.querySelector('.continent-content');
+      content.style.display = content.style.display === 'block' ? 'none' : 'block';
+    });
+
+    container.appendChild(card);
+  });
+</script>
+
+</body>
+</html>
